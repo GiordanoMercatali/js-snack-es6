@@ -22,26 +22,40 @@ const bikeArray = [
 
 // const [firstBike, secondBike, thirdBike, fourthBike] = bikeArray;
 
-const firstBikeWeight = bikeArray[0].weight;
-const secondBikeWeight = bikeArray[1].weight;
-const thirdBikeWeight = bikeArray[2].weight;
-const fourthBikeWeight = bikeArray[3].weight;
+// const firstBikeWeight = bikeArray[0].weight;
+// const secondBikeWeight = bikeArray[1].weight;
+// const thirdBikeWeight = bikeArray[2].weight;
+// const fourthBikeWeight = bikeArray[3].weight;
 
 let lowestWeight = 999;
 let result = "";
 const printResult = document.getElementById("result");
 
-for(i = 0; i < bikeArray.length; i++){
-    let curBikeWeight = bikeArray[i].weight;
-    if(curBikeWeight < lowestWeight){
-        lowestWeight = curBikeWeight;
-        result = `Lowest weight is: ${lowestWeight}`;
-    } console.log(lowestWeight);
-};
+// for(i = 0; i < bikeArray.length; i++){
+//     let curBikeWeight = bikeArray[i].weight;
+//     if(curBikeWeight < lowestWeight){
+//         lowestWeight = curBikeWeight;
+//         result = `Lowest weight is: ${lowestWeight}`;
+//     } console.log(lowestWeight);
+// };
+
+bikeArray.forEach((bike) =>{
+    curWeight = getWeight(bike.weight);
+    console.log(bike.weight);
+    if (curWeight < lowestWeight){
+        lowestWeight = curWeight;
+        printResult.append(lowestWeight);
+    }
+
+});
+
+function getWeight(bike){
+    const { weight } = bike;
+    const weightElem = document.createElement("div");
+    weightElem.innerHTML = `Lowest weight is: ${weight}`
+}
 
 printResult.innerHTML = result;
-
-
 
 // for (i = 0; i < bikeArray.length; i++){
     
