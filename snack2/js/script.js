@@ -37,4 +37,8 @@ function getPointsandInjuries(){
     return teams[i].name, teams[i].points, teams[i].injuries;
 }
 
-const newTeams = []
+const newTeams [
+    const {nameValue, _, injuriesValue} = teams[0],
+    const {nameValue, _, injuriesValue} = teams[1],
+    const {nameValue, _, injuriesValue} = teams[2],
+] = teams;
