@@ -27,17 +27,25 @@ const bikeArray = [
 // const thirdBikeWeight = bikeArray[2].weight;
 // const fourthBikeWeight = bikeArray[3].weight;
 
-let lowestWeight = 999;
+let lowestWeight = bikeArray[0].weight;
 let result = "";
 const printResult = document.getElementById("result");
 
- for(i = 0; i < bikeArray.length; i++){
-     let curBikeWeight = bikeArray[i].weight;
-     if(curBikeWeight < lowestWeight){
-         lowestWeight = curBikeWeight;
-         result = `Lowest weight is: ${lowestWeight}`;
-     } console.log(lowestWeight);
-};
+for(let {name, weight} of bikeArray){
+    
+    if(weight < lowestWeight){
+        lowestWeight = weight;
+        result = `${name} has the lowest weight of ${weight} kg`;
+    }
+} console.log(result);
+
+//  for(i = 0; i < bikeArray.length; i++){
+//      let curBikeWeight = bikeArray[i].weight;
+//      if(curBikeWeight < lowestWeight){
+//          lowestWeight = curBikeWeight;
+//          result = `Lowest weight is: ${lowestWeight}`;
+//      } console.log(lowestWeight);
+// };
 
 // bikeArray.forEach((bike) =>{
 //     curWeight = getWeight(bike.weight);
@@ -49,11 +57,11 @@ const printResult = document.getElementById("result");
 
 // });
 
-function getWeight(bike){
-    const { name, weight } = bike;
-    const weightElem = document.createElement("div");
-    weightElem.innerHTML = `${name} has the lowest weight of ${weight}`
-}
+// function getWeight(bike){
+//     const { name, weight } = bike;
+//     const weightElem = document.createElement("div");
+//     weightElem.innerHTML = `${name} has the lowest weight of ${weight}`
+// }
 
 // function getWeight(bike){
 //     const [firstBike, secondBike, thirdBike, fourthBike] = bike;
